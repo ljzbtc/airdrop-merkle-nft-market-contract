@@ -1,19 +1,17 @@
-# Foundry Starter Kit
+# AirdropMerkleNFTMarket
 
-This is my custom Foundry starter kit for daily use in smart contract development and deployment.
+AirdropMerkleNFTMarket 是一个结合了 ERC20 代币预付、Merkle 树验证和 NFT 领取功能的智能合约系统。它还支持批量操作的 multicall 功能。
 
-## Usage
+## 功能特性
 
-### Deploying and Verifying a Contract
+- ERC20 代币预付功能
+- 基于 Merkle 树的白名单验证
+- NFT 铸造和分发
+- 支持 multicall 的批量操作
 
-1. Source your environment variables:
+## 合约结构
 
-source .env
-
-2. Run the deployment script:
-
-forge script --account dev --chain sepolia script/deployer.s.sol --rpc-url $SEPOLIA_RPC_URL --broadcast --verify -vvvv --sender 0x2cf56496f155914d84e6eda6e2c0076aeae5b0f0
-
-### Verifying an Already Deployed Contract
-
-forge verify-contract 0x50c56eb8e5c30992cba712246b72b94968263bb9 TradeDevil --chain sepolia
+- `AirdropMerkleNFTMarket.sol`: 主合约，包含预付、验证和 NFT 领取逻辑
+- `MultiDelegatecall.sol`: 支持批量调用的合约
+- `ERC20Token.sol`: 用于预付的 ERC20 代币合约
+- `ERC721Token.sol`: NFT 合约
